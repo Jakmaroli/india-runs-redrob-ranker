@@ -1,0 +1,13 @@
+# Data & artifacts
+candidates.jsonl
+candidates.jsonl.gz
+sample_candidates.jsonl
+cache/
+*.npy
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/

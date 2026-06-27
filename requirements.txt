@@ -1,0 +1,9 @@
+# Ranking-step dependencies (Stage 3: CPU-only, no network, <=5 min, <=16 GB).
+numpy==1.26.4
+scipy==1.13.1
+scikit-learn==1.6.1
+
+# OPTIONAL -- only for the offline embedding index (precompute_embeddings.py, Phase 1).
+# NOT used at rank time. Uncomment to enable the embedding upgrade:
+# sentence-transformers==2.7.0
+# torch==2.2.2
