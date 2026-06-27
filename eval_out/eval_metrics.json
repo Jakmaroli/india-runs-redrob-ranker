@@ -1,0 +1,162 @@
+{
+  "n_candidates": 100000,
+  "oracle_tier_distribution": {
+    "0": 39269,
+    "1": 47980,
+    "2": 10954,
+    "3": 984,
+    "4": 304,
+    "5": 509
+  },
+  "baseline_metrics": {
+    "ndcg@10": 1.0,
+    "ndcg@50": 0.9574,
+    "map": 0.9612,
+    "p@10": 1.0,
+    "composite": 0.9814
+  },
+  "trap_robustness": {
+    "honeypot_rate@10": 0.0,
+    "honeypot_rate@100": 0.0,
+    "keyword_stuffer_rate@100": 0.0,
+    "consulting_heavy_rate@100": 0.01
+  },
+  "ablation": {
+    "no_semantic": {
+      "composite": 0.9894,
+      "delta_composite": 0.008,
+      "overlap@10": 0.8,
+      "overlap@100": 0.91,
+      "honeypots_in_top100": 0
+    },
+    "no_must_skills": {
+      "composite": 0.9814,
+      "delta_composite": -0.0,
+      "overlap@10": 1.0,
+      "overlap@100": 0.92,
+      "honeypots_in_top100": 0
+    },
+    "no_behavioral": {
+      "composite": 0.7683,
+      "delta_composite": -0.2131,
+      "overlap@10": 0.4,
+      "overlap@100": 0.6,
+      "honeypots_in_top100": 0
+    },
+    "no_location": {
+      "composite": 0.9787,
+      "delta_composite": -0.0027,
+      "overlap@10": 0.4,
+      "overlap@100": 0.65,
+      "honeypots_in_top100": 0
+    },
+    "no_penalties": {
+      "composite": 0.9215,
+      "delta_composite": -0.0599,
+      "overlap@10": 0.7,
+      "overlap@100": 0.84,
+      "honeypots_in_top100": 0
+    },
+    "no_traps": {
+      "composite": 0.9814,
+      "delta_composite": 0.0,
+      "overlap@10": 1.0,
+      "overlap@100": 1.0,
+      "honeypots_in_top100": 0
+    }
+  },
+  "top10_audit": [
+    {
+      "rank": 1,
+      "candidate_id": "CAND_0006567",
+      "oracle_tier": 5,
+      "title": "Senior AI Engineer",
+      "company": "Meta",
+      "yoe": 7.9,
+      "location": "Noida, Uttar Pradesh"
+    },
+    {
+      "rank": 2,
+      "candidate_id": "CAND_0018499",
+      "oracle_tier": 5,
+      "title": "Senior Machine Learning Engineer",
+      "company": "Zomato",
+      "yoe": 7.2,
+      "location": "Noida, Uttar Pradesh"
+    },
+    {
+      "rank": 3,
+      "candidate_id": "CAND_0081846",
+      "oracle_tier": 5,
+      "title": "Lead AI Engineer",
+      "company": "Razorpay",
+      "yoe": 6.7,
+      "location": "Jaipur, Rajasthan"
+    },
+    {
+      "rank": 4,
+      "candidate_id": "CAND_0006418",
+      "oracle_tier": 5,
+      "title": "Machine Learning Engineer",
+      "company": "Verloop.io",
+      "yoe": 5.7,
+      "location": "Gurgaon, Haryana"
+    },
+    {
+      "rank": 5,
+      "candidate_id": "CAND_0041669",
+      "oracle_tier": 5,
+      "title": "Recommendation Systems Engineer",
+      "company": "CRED",
+      "yoe": 8.0,
+      "location": "Noida, Uttar Pradesh"
+    },
+    {
+      "rank": 6,
+      "candidate_id": "CAND_0064326",
+      "oracle_tier": 5,
+      "title": "Search Engineer",
+      "company": "Sarvam AI",
+      "yoe": 7.6,
+      "location": "Gurgaon, Haryana"
+    },
+    {
+      "rank": 7,
+      "candidate_id": "CAND_0052328",
+      "oracle_tier": 5,
+      "title": "Recommendation Systems Engineer",
+      "company": "Amazon",
+      "yoe": 6.5,
+      "location": "Pune, Maharashtra"
+    },
+    {
+      "rank": 8,
+      "candidate_id": "CAND_0093193",
+      "oracle_tier": 5,
+      "title": "Senior Machine Learning Engineer",
+      "company": "Niramai",
+      "yoe": 7.9,
+      "location": "Bangalore, Karnataka"
+    },
+    {
+      "rank": 9,
+      "candidate_id": "CAND_0050454",
+      "oracle_tier": 5,
+      "title": "AI Engineer",
+      "company": "Rephrase.ai",
+      "yoe": 6.8,
+      "location": "Delhi, Delhi"
+    },
+    {
+      "rank": 10,
+      "candidate_id": "CAND_0066999",
+      "oracle_tier": 5,
+      "title": "Recommendation Systems Engineer",
+      "company": "Microsoft",
+      "yoe": 5.9,
+      "location": "Delhi, Delhi"
+    }
+  ],
+  "runtime_seconds": 145.5,
+  "note": "Metrics are computed against a JD-derived proxy oracle that reuses the ranker's own feature extraction (build_features/traps) in discrete-tier form. This is a self-consistency / sanity check, NOT independent validation -- it measures whether the score and the JD rules agree with each other, not whether either agrees with the hidden ground truth. Use deltas/ablations for relative insight into which components matter, not the absolute numbers."
+}
