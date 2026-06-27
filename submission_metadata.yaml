@@ -1,0 +1,51 @@
+# submission_metadata.yaml  --  Redrob / India Runs "Intelligent Candidate
+# Discovery & Ranking" Challenge.  Mirror this exactly in the upload portal.
+# Replace every <FILL_ME> before you submit.  (spec v4, Section 10.2)
+
+team_name: "<FILL_ME>"
+
+primary_contact:
+  name: "Janaki <FILL_ME>"
+  email: "akumarjanaki@gmail.com"
+  phone: "<FILL_ME_+91...>"
+
+team_members:
+  - name: "Janaki <FILL_ME>"
+    email: "akumarjanaki@gmail.com"
+  # - name: "<member 2>"
+  #   email: "<member 2 email>"
+
+# Must be reachable. Private repos OK if you grant org access at Stage 3.
+# Format: https://github.com/USERNAME/REPO
+github_repository_url: "<FILL_ME>"
+
+# A working hosted environment that runs the ranker on a <=100-candidate sample
+# end-to-end and outputs a ranked CSV in <=5 min CPU. Colab is easiest.
+# See SUBMISSION_CHECKLIST.md Section 6.
+sandbox_demo_link: "<FILL_ME>"
+
+# Honest declaration. Allowed and NOT penalised. Multi-select.
+# Options: Claude / ChatGPT / Copilot / Cursor / Gemini / Other / None
+ai_tools_declared:
+  - "<FILL_ME e.g. Claude>"
+
+# One line describing where you ran your code.
+compute_environment_summary: "CPU-only, 16 GB RAM, Python 3.12; rank.py runs in ~150s on the full 100K pool"
+
+# <=200 words. Strongly recommended (helps at Stage 4 review).
+methodology_summary: >
+  We treat candidate ranking as JD-INTENT matching, not keyword matching. A TF-IDF
+  semantic layer scores each candidate's career narrative against a hand-written
+  JD-intent query (CPU-only, no network, satisfies the 5-min Stage-3 budget). On top
+  of that we compute interpretable features that read what the JD MEANS: the four
+  must-have skill areas are detected both via explicit terminology AND via
+  plain-language evidence in career descriptions, so a genuine Tier-5 engineer who
+  never writes "RAG" still gets credit, while a keyword-stuffer with a non-engineering
+  title does not. The JD's explicit "do NOT want" list (services-only careers,
+  research-only with no production, recent LangChain-only, job-hoppers, CV/speech
+  without NLP) becomes graded penalties, and Redrob behavioral signals (recency,
+  recruiter response, open-to-work, notice period) act as an availability multiplier.
+  Honeypots are zeroed by detecting internal arithmetic impossibilities (0% reach our
+  top-100). Reasoning strings are extractive from real profile fields (no
+  hallucination). We validate offline with a transparent JD-derived proxy oracle plus
+  a feature-ablation study (eval/evaluate.py).
